@@ -1,0 +1,271 @@
+/* ========================================
+   💎 QUESTION CTA - УЛУЧШЕННАЯ ВЕРСИЯ
+   ======================================== */
+
+.question-the-user {
+    background: linear-gradient(180deg, #f8fafc 0%, #e0e7ff 100%);
+    padding: 6rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные круги на фоне */
+.question-the-user::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+}
+
+.question-the-user::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    bottom: -150px;
+    left: -150px;
+    pointer-events: none;
+}
+
+/* === ОСНОВНОЙ КОНТЕЙНЕР === */
+.question-the-user-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    /* 🔥 Градиент вместо одного цвета */
+    background: linear-gradient(135deg, #0080ff 0%, #0066cc 100%);
+    
+    max-width: 76.25rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3.5rem 3rem;
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    
+    /* 🔥 Тени и глубина */
+    box-shadow: 
+        0 20px 60px rgba(0, 128, 255, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    
+    transition: all 0.4s ease;
+}
+
+/* Hover эффект */
+.question-the-user-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 30px 80px rgba(0, 128, 255, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Декоративный паттерн на фоне */
+.question-the-user-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* === ЛЕВАЯ ЧАСТЬ (текст и кнопки) === */
+.question-the-user-left {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+/* === ЗАГОЛОВОК === */
+.question-the-user-content h1 {
+    font-size: 2.75rem;
+    font-weight: 900;
+    margin: 0 0 1rem 0;
+    color: #ffffff;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    
+    /* 🔥 Тень текста для читаемости */
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === ПАРАГРАФ === */
+.question-the-user-content p {
+    font-size: 1.25rem;
+    max-width: 33.125rem;
+    color: #e0f2fe;
+    line-height: 1.6;
+    margin: 0 0 2.5rem 0;
+}
+
+/* === КНОПКИ === */
+.question-buttons {
+    display: flex;
+    gap: 1.25rem;
+    
+    /* 🔥 УБРАЛ СТРАННЫЙ position: relative + top */
+    align-items: center;
+}
+
+.question-buttons .btn {
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    white-space: nowrap;
+}
+
+/* Primary кнопка */
+.question-buttons .btn.primary {
+    background: white;
+    color: #0080ff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.question-buttons .btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Secondary кнопка */
+.question-buttons .btn.secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.question-buttons .btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Стрелка у secondary кнопки */
+.question-buttons .btn.secondary::after {
+    content: "";
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.1875rem;
+    margin-left: 8px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14'%3E%3C/path%3E%3Cpath d='m12 5 7 7-7 7'%3E%3C/path%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
+}
+
+.question-buttons .btn.secondary:hover::after {
+    transform: translateX(5px);
+}
+
+/* === КАРТИНКА === */
+.question-the-user-content img {
+    border-radius: 1.5rem;
+    max-width: 20rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    
+    /* 🔥 Тень и рамка */
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 0 3px rgba(255, 255, 255, 0.1);
+    
+    transition: transform 0.4s ease;
+}
+
+.question-the-user-content img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+
+/* ========================================
+   📱 АДАПТИВ
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .question-the-user {
+        padding: 4rem 1.5rem;
+    }
+
+    .question-the-user-content {
+        max-width: 100%;
+        padding: 3rem 2.5rem;
+    }
+    
+    .question-the-user-content h1 {
+        font-size: 2.25rem;
+    }
+
+    .question-buttons {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .question-the-user-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2.5rem 2rem;
+    }
+    
+    .question-the-user-content img {
+        order: -1;
+        max-width: 15rem;
+        margin-bottom: 2rem;
+    }
+    
+    .question-the-user-content p {
+        max-width: 100%;
+        margin: 0 auto 2rem auto;
+    }
+    
+    .question-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .question-the-user {
+        padding: 3rem 1rem;
+    }
+
+    .question-the-user-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .question-the-user-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .question-the-user-content p {
+        font-size: 1.125rem;
+    }
+
+    .question-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .question-buttons .btn {
+        width: 100%;
+    }
+}

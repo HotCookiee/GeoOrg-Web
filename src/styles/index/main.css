@@ -1,0 +1,26 @@
+@import url('./common.css');
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./reasons.css');
+@import url('./pricing.css');
+@import url('./cta.css');
+@import url('./information.css');
+@import url('./buttons.css');
+@import url('./features.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+html {
+    scroll-behavior: smooth; /* плавная прокрутка */
+}
+
+/* Лёгкий snap только на мобильных */
+@media (max-width: 768px) {
+    html {
+        scroll-snap-type: y proximity; /* мягкий snap */
+    }
+    
+    section {
+        scroll-snap-align: start;
+    }
+}
+

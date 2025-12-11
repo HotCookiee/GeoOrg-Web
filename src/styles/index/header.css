@@ -1,0 +1,426 @@
+/* ==================== HEADER & NAV ==================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.nav {
+  background: rgba(15, 12, 41, 0.35);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1280px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.nav:hover {
+  background: rgba(15, 12, 41, 0.45);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ==================== NAV LOGO ==================== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+  font-size: clamp(1.30rem, 2vw, 1.3rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.nav-logo div {
+  width: clamp(2rem, 5vw, 3rem);
+  height: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+  color: white;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-logo:hover div {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(102, 126, 234, 0.6);
+}
+
+.nav-logo span {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ==================== СКРЫТЫЙ ЧЕКБОКС ==================== */
+.menu-toggle {
+  display: none;
+}
+
+/* ==================== HAMBURGER MENU ==================== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  width: 30px;
+  height: 24px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2.5px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: rotate(40deg) translate(8px, 8px);
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: rotate(-40deg) translate(7px, -7px);
+}
+
+/* ==================== МОБИЛЬНОЕ МЕНЮ ==================== */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(15, 12, 41, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0 0 20px 20px;
+  padding: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  animation: slideDown 0.3s ease;
+}
+
+.menu-toggle:checked ~ .nav-mobile {
+  display: flex;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-mobile a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  display: block;
+}
+
+.nav-mobile a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.nav-mobile a:hover {
+  color: white;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.nav-mobile a:hover::after {
+  width: calc(100% - 2rem);
+}
+
+.nav-mobile a {
+  cursor: pointer;
+}
+
+/* ==================== ДЕСКТОПНОЕ МЕНЮ ==================== */
+.nav-link {
+  display: none;
+  gap: 0.5rem;
+  list-style: none;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-link a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 1.5vw, 0.95rem);
+  position: relative;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0.3rem 0.4rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transition: width 0.3s ease;
+}
+
+.nav-link a:hover {
+  color: white;
+}
+
+.nav-link a:hover::after {
+  width: 100%;
+}
+
+/* ==================== NAV BUTTONS ==================== */
+.nav-but {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.but-light-hed,
+.but-bleak-hed {
+  padding: clamp(0.4rem, 1vw, 0.75rem) clamp(0.6rem, 1.5vw, 1.5rem);
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: clamp(0.65rem, 1.2vw, 0.95rem);
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: none;
+}
+
+.but-light-hed {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.but-light-hed:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.but-light-hed:active {
+  transform: translateY(0);
+}
+
+.but-bleak-hed {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+}
+
+.but-bleak-hed:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(102, 126, 234, 0.6);
+}
+
+.but-bleak-hed:active {
+  transform: translateY(-1px);
+}
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+
+/* Десктоп (1024px+) */
+@media (min-width: 1024px) {
+  .nav-link {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-mobile {
+    display: none !important;
+  }
+}
+
+/* Планшеты (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-link {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-mobile {
+    display: none !important;
+  }
+
+  .nav-link a {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.35rem;
+  }
+}
+
+/* Мобильные (640px - 768px) */
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-but {
+    gap: 0.3rem;
+  }
+
+  .but-light-hed,
+  .but-bleak-hed {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-logo span {
+    display: inline;
+  }
+}
+
+/* Маленькие мобильные (480px - 640px) */
+@media (max-width: 639px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-logo span {
+    display: inline;
+  }
+
+  .nav {
+    gap: 0.6rem;
+    padding: 0.8rem 0.8rem;
+  }
+
+  .nav-but {
+    gap: 0.3rem;
+  }
+
+  .but-light-hed,
+  .but-bleak-hed {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.65rem;
+  }
+}
+
+/* Очень маленькие мобильные (360px - 480px) */
+@media (max-width: 479px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-logo span {
+    display: none;
+  }
+
+  .nav {
+    gap: 0.4rem;
+    padding: 0.7rem 0.6rem;
+  }
+
+  .nav-logo div {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .nav-but {
+    gap: 0.2rem;
+  }
+
+  .but-light-hed,
+  .but-bleak-hed {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .nav-mobile {
+    padding: 0.75rem;
+  }
+
+  .nav-mobile a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}

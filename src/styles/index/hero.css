@@ -1,0 +1,431 @@
+/* ================================================
+   🎯 HERO SECTION - ИСПРАВЛЕННАЯ ВЕРСИЯ
+   ================================================ */
+
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 7rem 5rem 10rem;
+    
+    background: linear-gradient(135deg, 
+        #dbeafe 0%,    /* голубой */
+        #eff6ff 35%,   /* светло-голубой */
+        #f8fafc 65%,   /* серо-голубой */
+        #ffffff 100%   /* белый */
+    );
+    
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративный элемент на фоне */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(21, 93, 252, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    top: -200px;
+    right: -200px;
+    pointer-events: none;
+    animation: rotate-slow 30s linear infinite;
+}
+
+@keyframes rotate-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* === КОНТЕНТ === */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 43.75rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Параграф */
+.hero-content > p {
+    font-size: 1.1875rem;
+    line-height: 1.7;
+    color: #475569;
+    max-width: 40rem;
+    width: 100%;
+}
+
+/* === ЗАГОЛОВОК === */
+.hero-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.hero-head h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -1px;
+}
+
+.hero-head span {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #155dfc, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* === КНОПКИ  === */
+.hero-but {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.hero-but button {
+    padding: 1rem 2rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-but button.primary,
+.hero-but .btn.primary {
+    background: linear-gradient(135deg, #155dfc, #3b82f6) ;
+    color: white;
+    box-shadow: 0 8px 20px rgba(21, 93, 252, 0.3);
+}
+
+.hero-but button.primary:hover,
+.hero-but .btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(21, 93, 252, 0.4);
+}
+
+.hero-but button.secondary,
+.hero-but .btn.secondary {
+    background: white;
+    color: #155dfc;
+    border: 2px solid #e2e8f0;
+}
+
+.hero-but button.secondary:hover,
+.hero-but .btn.secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+/* === ИНФО БЛОКИ === */
+.hero-info {
+    position: relative;
+    margin-top: 4rem;
+    display: flex;
+    gap: 4rem;
+}
+
+.hero-info > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.hero-info-text {
+    transition: all 0.3s ease;
+}
+
+.hero-info-text.first {
+    animation: levitation-1 4s ease-in-out infinite alternate;
+}
+
+.hero-info-text.second {
+    animation: levitation-2 4.5s ease-in-out infinite alternate;
+    animation-delay: 0.5s;
+}
+
+.hero-info-text.third {
+    animation: levitation-3 5s ease-in-out infinite alternate;
+    animation-delay: 1s;
+}
+
+/* Анимации левитации */
+@keyframes levitation-1 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+@keyframes levitation-2 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-20px) rotate(-2deg);
+    }
+}
+
+@keyframes levitation-3 {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-18px) rotate(1deg);
+    }
+}
+
+/* === ФОТО === */
+.hero-photo {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.hero-photo > img {
+    border-radius: 2rem;
+    height: 28.75rem;
+    width: 30rem;
+    max-width: 100%;
+    object-fit: cover;
+    
+    box-shadow: 
+        0 20px 60px rgba(15, 23, 42, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+    
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: levitation-img 6s ease-in-out infinite alternate;
+}
+
+.hero-photo > img:hover {
+    transform: scale(1.02);
+    box-shadow: 
+        0 30px 80px rgba(15, 23, 42, 0.2),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+@keyframes levitation-img {
+    0% {
+        transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-30px) rotate(1deg);
+    }
+}
+
+/* === BADGE === */
+.badge {
+    position: absolute;
+    left: 1.5rem;
+    bottom: -1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1.25rem;
+    background: white;
+    
+    box-shadow: 
+        0 20px 50px rgba(15, 23, 42, 0.2),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+    
+    animation: levitation-badge 4s ease-in-out infinite alternate;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 25px 60px rgba(15, 23, 42, 0.25),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+}
+
+@keyframes levitation-badge {
+    0% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    100% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+/* Статус индикатор */
+.badge-status {
+    width: 1.625rem;
+    height: 1.625rem;
+    border-radius: 50%;
+    background: #e5f9ec;
+    border: 2px solid #b7efc8;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.badge-status::after {
+    content: "";
+    position: absolute;
+    inset: 0.375rem;
+    border-radius: 50%;
+    background: #19c463;
+    animation: badge-pulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes badge-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Текст badge */
+.badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.badge-title {
+    font-size: 0.8125rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.badge-amount {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+
+/* ================================================
+   📱 АДАПТИВ
+   ================================================ */
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+        padding: 5rem 2rem 8rem;
+    }
+    
+    .hero::before {
+        width: 400px;
+        height: 400px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .hero-head {
+        justify-content: center;
+    }
+
+    .hero-info {
+        gap: 3rem;
+        margin-top: 3rem;
+        justify-content: center;
+    }
+
+    .hero-photo > img {
+        width: 100%;
+        max-width: 28rem;
+        height: auto;
+    }
+
+    .badge {
+        left: 1rem;
+        bottom: -1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1.5rem 6rem;
+    }
+    
+    .hero-head h1,
+    .hero-head span {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content > p {
+        font-size: 1.0625rem;
+    }
+
+    .hero-info {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+        align-items: center;
+    }
+    
+    .hero-but {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-but button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding: 3rem 1rem 5rem;
+        gap: 2rem;
+    }
+
+    .hero-head h1,
+    .hero-head span {
+        font-size: 2rem;
+    }
+    
+    .hero-content > p {
+        font-size: 1rem;
+    }
+
+    .hero-photo > img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .badge {
+        left: 0.75rem;
+        bottom: -1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .badge-amount {
+        font-size: 0.875rem;
+    }
+    
+    .hero-info {
+        gap: 1.5rem;
+    }
+}
+
+
+

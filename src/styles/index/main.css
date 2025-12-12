@@ -7,20 +7,19 @@
 @import url('./information.css');
 @import url('./buttons.css');
 @import url('./features.css');
+@import url('./iphone-adaptive.css'); 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
 
 html {
-    scroll-behavior: smooth; /* плавная прокрутка */
+  scroll-behavior: smooth;
 }
 
-/* Лёгкий snap только на мобильных */
 @media (max-width: 768px) {
-    html {
-        scroll-snap-type: y proximity; /* мягкий snap */
-    }
-    
-    section {
-        scroll-snap-align: start;
-    }
-}
+  html {
+    scroll-snap-type: y proximity;
+  }
 
+  section {
+    scroll-snap-align: start;
+  }
+}

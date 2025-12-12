@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="src/styles/index/main.css">
-    <title>Document</title>
+    <title>InsurePro — бесплатное удаление страховки</title>
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="10000px"
+        href="/src/assets/75980408-5520-4781-be20-0e3dffbedccd-Photoroom.png"
+    >
     <script src="src/scripts/wow.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -21,35 +30,38 @@
 <body>
     <header>
         <nav class="nav">
-            <a class="nav-logo">
+            <a class="nav-logo" href="#">
                 <div>IP</div>
                 <span>InsurePro</span>
             </a>
-
-            <div class="nav-mobile">
-                <a href="">Решения</a>
-                <a href="">Преимущества</a>
-                <a href="">Тарифы</a>
-                <a href="">О нас</a>
-            </div>
-
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label class="hamburger" for="menu-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
             <div class="nav-link">
-                <a href="">Решения</a>
-                <a href="">Преимущества</a>
-                <a href="">Тарифы</a>
-                <a href="">О нас</a>
+                <a href="#solutions">Решения</a>
+                <a href="#advantages">Преимущества</a>
+                <a href="#pricing">Тарифы</a>
+                <a href="#about">О нас</a>
             </div>
-
             <div class="nav-but">
                 <button class="but-light-hed">Войти</button>
                 <button class="but-bleak-hed">Связаться с нами</button>
+            </div>
+            <div class="nav-mobile">
+                <a href="#solutions">Решения</a>
+                <a href="#advantages">Преимущества</a>
+                <a href="#pricing">Тарифы</a>
+                <a href="#about">О нас</a>
             </div>
         </nav>
     </header>
 
 
     <main>
-        <section class="hero">
+        <section class="hero" id="top">
             <div class="hero-content">
                 <div class="hero-head">
                     <h1 data-wow-delay='0s' class="wow animate__animated animate__fadeInLeft">Страхование для вашего
@@ -97,7 +109,7 @@
             </div>
         </section>
 
-        <section class="features">
+        <section class="features" id="solutions">
             <div class="features-header">
                 <p class="important-text wow animate__animated animate__fadeInDown">Решения для любого бизнеса</p>
             </div>
@@ -211,7 +223,8 @@
                 </ul>
             </div>
         </section>
-        <section class="reasons  wow animate__animated animate__fadeInUp">
+
+        <section class="reasons  wow animate__animated animate__fadeInUp" id="advantages">
             <div class="reasons-header">
                 <p class="important-text">Почему выбирают InsurePro</p>
             </div>
@@ -300,7 +313,8 @@
                 </div>
             </div>
         </section>
-        <section class="guarantees">
+
+        <section class="guarantees" id="numbers">
             <div class="guarantees-blur  wow animate__animated animate__fadeInUp">
                 <div>
                     <p class="important-text">InsurePro в цифрах</p>
@@ -330,7 +344,7 @@
             </div>
         </section>
 
-        <section class="pricing-plans">
+        <section class="pricing-plans" id="pricing">
             <div class="pricing-plans-header">
                 <p data-wow-delay='0s' class="important-text wow animate__animated animate__fadeInUp"">Прозрачные тарифы</p>
             </div>
@@ -439,27 +453,25 @@
             </div>
         </section>
 
-
-        <section data-wow-delay='0s' class="question-the-user wow animate__animated animate__fadeInUp"">
+        <section data-wow-delay='0s' class="question-the-user wow animate__animated animate__fadeInUp" id="contact">
             <div class=" question-the-user-content">
-            <div>
-                <h1>Готовы защитить свой бизнес?</h1>
-                <p>Получите персональное предложение за 5 минут. Без обязательств</p>
-                <div class="question-buttons">
-                    <button class="btn secondary">Получить консутльтацию</button>
-                    <button class="btn glass">Скачать презентацию</button>
+                <div>
+                    <h1>Готовы защитить свой бизнес?</h1>
+                    <p>Получите персональное предложение за 5 минут. Без обязательств</p>
+                    <div class="question-buttons">
+                        <button class="btn secondary">Получить консутльтацию</button>
+                        <button class="btn glass">Скачать презентацию</button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <img
-                    src="https://avatars.mds.yandex.net/i?id=36722dd805ddc0b6485c1c260d65bb67_l-5492883-images-thumbs&amp;n=13">
-            </div>
+                <div>
+                    <img
+                        src="https://avatars.mds.yandex.net/i?id=36722dd805ddc0b6485c1c260d65bb67_l-5492883-images-thumbs&amp;n=13">
+                </div>
             </div>
         </section>
     </main>
 
-
-    <footer class="information">
+    <footer class="information" id="about">
         <div class="information-blok-1">
             <div>
                 <div>

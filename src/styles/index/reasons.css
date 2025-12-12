@@ -2,141 +2,137 @@
    REASONS - Почему выбирают нас
    ======================================== */
 
-/* === ВСЯ СЕКЦИЯ === */
-.reasons{
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 3rem;
-    background: white;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    align-items: center;  
+.reasons {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  align-items: center;
 }
 
+@media (max-width: 768px) {
+  .reasons {
+    padding: 1.5rem 1rem;
+    margin: 2rem 0.5rem;
+  }
+}
 
-
-.reasons .reasons-body{
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 4rem;
-    max-width: 1200px;
-    background: white;
-    border-radius: 1.5rem;
-    align-items: center; 
-
+.reasons .reasons-body {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  background: white;
+  border-radius: 1.5rem;
+  align-items: center;
 }
 
 .important-text {
-    font-size: 2.9rem;
-    font-weight: 700;
-    color: #6366f1;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
+  font-size: 2.9rem;
+  font-weight: 700;
+  color: #6366f1;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
 }
 
 /* === СПИСОК КАРТОЧЕК === */
 .reasons-carts {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 /* === ОДНА КАРТОЧКА === */
 .reasons-carts li {
-    background: #f8fafc;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    border-left: 3px solid #e0e7ff;
-    transition: all 0.3s ease;
+  background: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border-left: 3px solid #e0e7ff;
+  transition: all 0.3s ease;
 }
 
 /* === ПРИ НАВЕДЕНИИ === */
 .reasons-carts li:hover {
-    background: white;
-    border-left-width: 6px;
-    border-left-color: #6366f1;
-    transform: translateX(8px);
-    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+  background: white;
+  border-left-width: 6px;
+  border-left-color: #6366f1;
+  transform: translateX(8px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
 }
 
 /* === ВНУТРИ КАРТОЧКИ === */
 .reasons-content {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
 }
 
-/* === ИКОНКА ДЛЯ REASONS (уникальный селектор) ========== */
+/* === ИКОНКА ДЛЯ REASONS === */
 .reasons .feature-icon {
-    width: 3.5rem;
-    height: 3.5rem;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.75rem;
-    background: #dbeafe;
-    transition: all 0.3s ease;
+  width: 3.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: #dbeafe;
+  transition: all 0.3s ease;
 }
 
-/* При наведении на КАРТОЧКУ - иконка меняется */
 .reasons-carts li:hover .feature-icon {
-    background: #6366f1;
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  background: #6366f1;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
 }
 
-/* SVG внутри становится белым */
 .reasons-carts li:hover .feature-icon svg {
-    filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 /* === ТЕКСТ === */
 .reasons-content h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
 }
 
 .reasons-content p {
-    font-size: 1rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* === КАРТИНКА === */
 .reasons > div:nth-child(2) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .reasons img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    border-radius: 1.25rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    transition: transform 0.4s ease;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease;
 }
 
-/* При наведении - увеличивается */
 .reasons img:hover {
-    transform: scale(1.15) rotate(0.04rad);
-}
-
-.reasons {
-  display: flex;
+  transform: scale(1.15) rotate(0.04rad);
 }
 
 /* ========================================
@@ -144,165 +140,117 @@
    ======================================== */
 
 .guarantees {
-    background-image: url(https://avatars.mds.yandex.net/i?id=0f34079b1af3ad009efbd59423b6c9ae_l-8497453-images-thumbs&n=13);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    padding: 5rem 2rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  background-image: url(https://avatars.mds.yandex.net/i?id=0f34079b1af3ad009efbd59423b6c9ae_l-8497453-images-thumbs&n=13);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 5rem 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .guarantees::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 2rem;
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 2rem;
+  z-index: 1;
 }
 
-/* Весь контент поверх оверлея */
 .guarantees > * {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
-/* Заголовок белый */
 .guarantees h2 {
-    font-size: 2.75rem;
-    font-weight: 900;
-    color: white;
-    margin-bottom: 1rem;
-    text-align: center;
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .guarantees-blur .important-text {
-    text-align: center;
-    font-size: 2rem;
+  text-align: center;
+  font-size: 2rem;
 }
 
-/* Описание белое */
 .guarantees > p {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    max-width: 700px;
-    margin-bottom: 3rem;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 3rem;
 }
 
 /* === СТЕКЛЯННАЯ КАРТОЧКА === */
 .guarantees-blur {
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 1.5rem;
-    padding: 3rem 2rem;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 /* === СПИСОК ЦИФР === */
 .guarantees-content ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* === ОДНА ЦИФРА === */
 .guarantees-content li {
-    text-align: center;
-    transition: transform 0.3s;
+  text-align: center;
+  transition: transform 0.3s;
 }
 
 .guarantees-content li:hover {
-    transform: translateY(-10px);
+  transform: translateY(-10px);
 }
 
 .guarantees-content h3 {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #60a5fa;
-    margin-bottom: 0.5rem;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #60a5fa;
+  margin-bottom: 0.5rem;
 }
 
 .guarantees-content p {
-    font-size: 1.15rem;
-    color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 
-
-
-
-/* ========================================
-   📱 МОБИЛЬНАЯ ВЕРСИЯ
-   ======================================== */
-
-/* Планшет */
-@media (max-width: 1024px) {
-    .reasons {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 2.5rem;
-    }
-    
-    /* Картинка сверху */
-    .reasons > div:nth-child(2) {
-        order: -1;
-    }
-}
-
-/* Мобилка */
-@media (max-width: 768px) {
-    .reasons {
-        padding: 2rem 1.5rem;
-        margin: 2rem 1rem;
-    }
-    
-    .reasons-carts {
-        gap: 0.75rem;
-    }
-    
-    .reasons-carts li {
-        padding: 1.25rem;
-    }
-    
-    .reasons .feature-icon {
-        width: 3rem;
-        height: 3rem;
-    }
-    
-    .reasons-content h3 {
-        font-size: 1.1rem;
-    }
-    
-    .reasons-content p {
-        font-size: 0.95rem;
-    }
-}
-
-/* Маленькая мобилка */
 @media (max-width: 640px) {
-    .reasons {
-        padding: 1.5rem 1rem;
-    }
-    
-    .reasons-content {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    .reasons-carts li:hover {
-        transform: translateX(5px);
-    }
+  .reasons {
+    padding: 3rem 1.25rem;
+    margin: 2rem 0;
+  }
+
+  .reasons-body {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reasons img {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  .reasons-carts li {
+    padding: 1.25rem 1rem;
+  }
 }

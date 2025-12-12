@@ -1,4 +1,5 @@
 /* ==================== HEADER & NAV ==================== */
+
 header {
   position: fixed;
   top: 0;
@@ -22,7 +23,7 @@ header {
   align-items: center;
   width: 90%;
   max-width: 1280px;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 1px rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
@@ -37,6 +38,7 @@ header {
 }
 
 /* ==================== NAV LOGO ==================== */
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -44,7 +46,7 @@ header {
   text-decoration: none;
   color: white;
   font-weight: 800;
-  font-size: clamp(1.30rem, 2vw, 1.3rem);
+  font-size: 1.3rem;
   cursor: pointer;
   transition: all 0.3s ease;
   flex-shrink: 0;
@@ -52,15 +54,15 @@ header {
 }
 
 .nav-logo div {
-  width: clamp(2rem, 5vw, 3rem);
-  height: clamp(2rem, 5vw, 3rem);
+  width: 3rem;
+  height: 3rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: clamp(0.8rem, 1.5vw, 1.1rem);
+  font-size: 1.1rem;
   color: white;
   box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
   transition: all 0.3s ease;
@@ -80,35 +82,68 @@ header {
 }
 
 /* ==================== СКРЫТЫЙ ЧЕКБОКС ==================== */
+
 .menu-toggle {
-  display: none;
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
 }
 
 /* ==================== HAMBURGER MENU ==================== */
+
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 6px;
-  background: transparent;
-  border: none;
+  justify-content: center;
+  gap: 5px;
+  padding: 0.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: radial-gradient(circle at 0 0,
+              rgba(255, 255, 255, 0.25),
+              rgba(15, 12, 41, 0.6));
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
   cursor: pointer;
+  outline: none;
+  border: none;
   flex-shrink: 0;
-  padding: 0;
-  width: 30px;
-  height: 24px;
-  z-index: 1001;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+              background 0.25s ease;
 }
+
+.hamburger:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.hamburger:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* линии */
 
 .hamburger span {
   width: 100%;
-  height: 2.5px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #e5e7ff, #a5b4fc);
+  box-shadow: 0 0 8px rgba(129, 140, 248, 0.7);
+  transition: transform 0.25s ease, opacity 0.2s ease,
+              background 0.25s ease;
 }
 
+/* состояние "крестик" */
+
 .menu-toggle:checked ~ .hamburger span:nth-child(1) {
-  transform: rotate(40deg) translate(8px, 8px);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .menu-toggle:checked ~ .hamburger span:nth-child(2) {
@@ -116,10 +151,11 @@ header {
 }
 
 .menu-toggle:checked ~ .hamburger span:nth-child(3) {
-  transform: rotate(-40deg) translate(7px, -7px);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ==================== МОБИЛЬНОЕ МЕНЮ ==================== */
+
 .nav-mobile {
   display: none;
   position: absolute;
@@ -187,13 +223,10 @@ header {
   width: calc(100% - 2rem);
 }
 
-.nav-mobile a {
-  cursor: pointer;
-}
-
 /* ==================== ДЕСКТОПНОЕ МЕНЮ ==================== */
+
 .nav-link {
-  display: none;
+  display: flex;
   gap: 0.5rem;
   list-style: none;
   flex: 1;
@@ -207,7 +240,7 @@ header {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-weight: 500;
-  font-size: clamp(1.25rem, 1.5vw, 0.95rem);
+  font-size: 0.95rem;
   position: relative;
   cursor: pointer;
   white-space: nowrap;
@@ -236,6 +269,7 @@ header {
 }
 
 /* ==================== NAV BUTTONS ==================== */
+
 .nav-but {
   display: flex;
   gap: 0.4rem;
@@ -246,12 +280,12 @@ header {
 
 .but-light-hed,
 .but-bleak-hed {
-  padding: clamp(0.4rem, 1vw, 0.75rem) clamp(0.6rem, 1.5vw, 1.5rem);
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: clamp(0.65rem, 1.2vw, 0.95rem);
+  font-size: 0.95rem;
   white-space: nowrap;
   flex-shrink: 0;
   border: none;
@@ -291,136 +325,55 @@ header {
 
 /* ==================== АДАПТИВНОСТЬ ==================== */
 
-/* Десктоп (1024px+) */
-@media (min-width: 1024px) {
+@media (max-width: 1100px) {
+  
+  /* логотип слева, бургер + войти справа */
+  .nav {
+    justify-content: space-between;
+  }
+
   .nav-link {
-    display: flex;
+    display: none;
   }
 
-  .hamburger {
-    display: none !important;
+  .but-bleak-hed {
+    display: none;
   }
 
-  .nav-mobile {
-    display: none !important;
-  }
-}
-
-/* Планшеты (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .nav-link {
-    display: flex;
+  .nav-but {
+    gap: 0.3rem;
   }
 
-  .hamburger {
-    display: none !important;
-  }
-
-  .nav-mobile {
-    display: none !important;
-  }
-
-  .nav-link a {
+  .but-light-hed {
+    padding: 0.4rem 0.9rem;
     font-size: 0.8rem;
-    padding: 0.25rem 0.35rem;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;  
   }
 }
 
-/* Мобильные (640px - 768px) */
-@media (max-width: 767px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-link {
-    display: none;
-  }
-
-  .nav-but {
-    gap: 0.3rem;
-  }
-
-  .but-light-hed,
-  .but-bleak-hed {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
-  }
-
-  .nav-logo span {
-    display: inline;
-  }
-}
-
-/* Маленькие мобильные (480px - 640px) */
-@media (max-width: 639px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-link {
-    display: none;
-  }
-
-  .nav-logo span {
-    display: inline;
+@media (max-width: 640px) {
+  header {
+    padding: 0.5rem 0.4rem;
   }
 
   .nav {
-    gap: 0.6rem;
-    padding: 0.8rem 0.8rem;
-  }
+    padding: 0.7rem 0.8rem;
+    background: rgba(15, 12, 41, 0.3);
+    box-shadow:
+      0 6px 20px rgba(0, 0, 0, 0.25),
 
-  .nav-but {
-    gap: 0.3rem;
-  }
 
-  .but-light-hed,
-  .but-bleak-hed {
-    padding: 0.4rem 0.6rem;
-    font-size: 0.65rem;
-  }
-}
 
-/* Очень маленькие мобильные (360px - 480px) */
-@media (max-width: 479px) {
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-link {
-    display: none;
-  }
-
-  .nav-logo span {
-    display: none;
-  }
-
-  .nav {
-    gap: 0.4rem;
-    padding: 0.7rem 0.6rem;
-  }
-
-  .nav-logo div {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .nav-but {
-    gap: 0.2rem;
-  }
-
-  .but-light-hed,
-  .but-bleak-hed {
-    padding: 0.35rem 0.5rem;
-    font-size: 0.6rem;
+      
+      inset 0 1px 1px rgba(255, 255, 255, 0.18);
   }
 
   .nav-mobile {
-    padding: 0.75rem;
-  }
-
-  .nav-mobile a {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.85rem;
+    background: rgba(8, 6, 28, 0.96);
+    backdrop-filter: blur(18px);
   }
 }

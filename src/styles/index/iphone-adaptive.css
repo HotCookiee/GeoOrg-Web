@@ -1,0 +1,911 @@
+/* ============================================
+   📱 АДАПТАЦИЯ ДЛЯ iPHONE
+   Единый файл для всех мобильных устройств
+   ============================================ */
+
+/* ==========================================
+   ОБЩИЕ НАСТРОЙКИ ДЛЯ МОБИЛЬНЫХ
+   ========================================== */
+
+@media (max-width: 640px) {
+  section {
+    scroll-margin-top: 90px;
+  }
+
+  .feature-icon {
+    font-size: 1.1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+/* Универсальные улучшения для touch-устройств */
+@media only screen and (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-touch-callout: none;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  button,
+  a,
+  .nav-mobile a,
+  .hamburger {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+
+@media (min-width: 1024px) {
+  .nav-link {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav-link {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-mobile {
+    display: none !important;
+  }
+
+  .nav-link a {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.35rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-but {
+    gap: 0.3rem;
+  }
+
+  .but-light-hed,
+  .but-bleak-hed {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .nav-logo span {
+    display: inline;
+  }
+}
+
+@media (max-width: 639px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-logo span {
+    display: inline;
+  }
+
+  .nav {
+    gap: 0.6rem;
+    padding: 0.8rem 0.8rem;
+  }
+
+  .nav-but {
+    gap: 0.3rem;
+  }
+
+  .but-light-hed,
+  .but-bleak-hed {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-link {
+    display: none;
+  }
+
+  .nav-logo span {
+    display: none;
+  }
+
+  .nav {
+    gap: 0.4rem;
+    padding: 0.7rem 0.6rem;
+  }
+
+  .nav-logo div {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .nav-but {
+    gap: 0.2rem;
+  }
+
+  .but-light-hed,
+  .but-bleak-hed {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .nav-mobile {
+    padding: 0.75rem;
+  }
+
+  .nav-mobile a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 2rem 8rem;
+  }
+
+  .hero::before {
+    width: 400px;
+    height: 400px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-head {
+    justify-content: center;
+  }
+
+  .hero-info {
+    gap: 3rem;
+    margin-top: 3rem;
+    justify-content: center;
+  }
+
+  .hero-photo > img {
+    width: 100%;
+    max-width: 28rem;
+    height: auto;
+  }
+
+  .badge {
+    left: 1rem;
+    bottom: -1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem 6rem;
+  }
+
+  .hero-photo > img {
+    display: none;
+  }
+
+  .badge {
+    display: none;
+  }
+
+  .hero-head h1,
+  .hero-head span {
+    font-size: 2.5rem;
+  }
+
+  .hero-content > p {
+    font-size: 1.0625rem;
+  }
+
+  .hero-info {
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    align-items: center;
+  }
+
+  .hero-but {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-but button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 3rem 1rem 5rem;
+    gap: 2rem;
+  }
+
+  .hero-head h1,
+  .hero-head span {
+    font-size: 2rem;
+  }
+
+  .hero-content > p {
+    font-size: 1rem;
+  }
+
+  .hero-info {
+    gap: 1.5rem;
+  }
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 428px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+  
+  .hero {
+    padding: 5rem 1.25rem 3rem;
+    min-height: calc(100vh - 70px);
+  }
+
+  .hero::before {
+    width: 250px;
+    height: 250px;
+  }
+
+  .hero-head h1,
+  .hero-head span {
+    font-size: 2rem !important;
+    line-height: 1.15;
+  }
+
+  .hero-content > p {
+    font-size: 0.95rem !important;
+    line-height: 1.6;
+  }
+
+  .hero-but button,
+  .hero-but .btn {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-photo > img,
+  .badge,
+  .hero-info-text {
+    animation: none;
+  }
+}
+
+/* ==========================================
+   FEATURES SECTION
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .features-proposal ul {
+    margin: 2rem 1.5rem;
+  }
+
+  .features-proposal li {
+    flex: 0 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .features-header {
+    padding-top: 2.5rem;
+    text-align: center;
+  }
+
+  .features-proposal ul {
+    margin: 1.5rem 1rem;
+  }
+
+  .features-proposal li {
+    flex: 1 1 100%;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .features {
+    padding: 3rem 1.25rem;
+  }
+
+  .features-header {
+    padding-top: 3rem;
+  }
+
+  .features-proposal ul {
+    gap: 1.25rem;
+    margin: 1.5rem 0.75rem;
+  }
+
+  .features-proposal li {
+    padding: 1.5rem;
+  }
+
+  .features-proposal .feature-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+/* ==========================================
+   REASONS SECTION
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .reasons .reasons-body {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .reasons-body img {
+    display: none;
+  }
+
+
+  .reasons > div:nth-child(2) {
+    order: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .reasons {
+    padding: 2rem 1.5rem;
+    margin: 2rem 1rem;
+  }
+
+  .reasons-carts {
+    gap: 0.75rem;
+  }
+
+  .reasons-carts li {
+    padding: 1.25rem;
+  }
+
+
+  .reasons .feature-icon {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .reasons-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .reasons-content p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .reasons {
+    padding: 1.5rem 1rem;
+  }
+
+  .reasons-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .reasons-carts li:hover {
+    transform: translateX(5px);
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .reasons {
+    padding: 3rem 1.25rem;
+  }
+
+  .reasons .reasons-body {
+    gap: 2rem;
+  }
+
+  .important-text {
+    font-size: 2rem;
+  }
+
+  .reasons-carts li {
+    padding: 1.25rem 1rem;
+  }
+
+  .reasons-content h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* ==========================================
+   INFORMATION SECTION
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .information-blok-1 {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .information-blok-1 > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .information {
+    padding: 32px 16px 24px;
+  }
+
+  .information-blok-1 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .information-blok-1 h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .information-blok-1 h3 {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .information-blok-2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .information-blok-2 > div {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .information-blok-2 a {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .information {
+    padding: 3rem 1.25rem 2rem;
+  }
+
+  .information-blok-1 {
+    gap: 2rem;
+  }
+
+  .information-blok-2-links svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ==========================================
+   PRICING SECTION
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .pricing-plans {
+    padding: 4rem 2rem;
+  }
+
+  .pricing-plans-carts {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .pricing-plans-carts > li:nth-child(2) {
+    order: -1;
+    transform: scale(1);
+  }
+
+  .pricing-plans-carts > li:nth-child(2):hover {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing-plans {
+    padding: 3rem 1rem;
+  }
+
+  .pricing-plans-header .important-text {
+    font-size: 2rem;
+  }
+
+  .pricing-plans-carts {
+    gap: 1.5rem;
+  }
+
+  .pricing-plans-carts > li {
+    padding: 2rem 1.5rem;
+  }
+
+  .pricing-plans-carts h4 {
+    font-size: 1.5rem;
+  }
+
+  .pricing-plans-carts .important-text {
+    font-size: 2rem;
+  }
+
+  .pricing-plans-popular-head {
+    font-size: 0.85rem;
+    top: -12px;
+    padding: 0.4rem 1.25rem;
+  }
+
+  .pricing-plans-carts div > ul > li {
+    font-size: 0.95rem;
+  }
+
+  .feature-icon {
+    font-size: 1.25rem;
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .pricing-plans {
+    padding: 3rem 1.25rem;
+  }
+
+  .pricing-plans-header .important-text {
+    font-size: 1.85rem !important;
+  }
+
+  .pricing-plans-carts {
+    gap: 1.75rem;
+  }
+
+  .pricing-plans-carts > li {
+    padding: 1.75rem 1.25rem;
+    border-radius: 1.25rem;
+  }
+
+  .pricing-plans-carts h4 {
+    font-size: 1.35rem !important;
+  }
+
+  .pricing-plans-carts .important-text {
+    font-size: 1.85rem !important;
+  }
+
+  .pricing-plans-carts div > ul {
+    gap: 0.85rem;
+    margin: 1rem 0;
+  }
+
+  .pricing-plans-carts div > ul > li {
+    font-size: 0.9rem;
+  }
+
+  .feature-icon {
+    width: 1.65rem;
+    height: 1.65rem;
+    font-size: 1.1rem;
+  }
+
+  .pricing-plans-carts button {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 0.875rem;
+  }
+
+  .pricing-plans-popular-head {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+    top: -10px;
+  }
+}
+
+/* ==========================================
+   CTA (QUESTION) SECTION
+   ========================================== */
+
+@media (max-width: 1024px) {
+  .question-the-user {
+    padding: 4rem 1.5rem;
+  }
+
+  .question-the-user-content {
+    max-width: 100%;
+    padding: 3rem 2.5rem;
+  }
+
+  .question-the-user-content h1 {
+    font-size: 2.25rem;
+  }
+
+  .question-buttons {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .question-the-user-content {
+    flex-direction: column;
+    text-align: center;
+    padding: 2.5rem 2rem;
+  }
+
+  .question-the-user-content img {
+    order: -1;
+    max-width: 15rem;
+    margin-bottom: 2rem;
+  }
+
+  .question-the-user-content p {
+    max-width: 100%;
+    margin: 0 auto 2rem auto;
+  }
+
+  .question-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .question-the-user {
+    padding: 3rem 1rem;
+  }
+
+  .question-the-user-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .question-the-user-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .question-the-user-content p {
+    font-size: 1.125rem;
+  }
+
+  .question-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .question-buttons .btn {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  .question-the-user {
+    padding: 3rem 1.25rem;
+  }
+
+  .question-the-user-content {
+    padding: 2.5rem 2.5rem ;
+    gap: 1.5rem;
+  }
+
+  .question-the-user-content h1 {
+    font-size: 1.75rem !important;
+  }
+
+  .question-the-user-content p {
+    font-size: 0.95rem;
+  }
+
+  .question-the-user-content img {
+    max-width: 12rem;
+  }
+
+  .question-buttons .btn {
+    padding: 1rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================
+   GUARANTEES SECTION
+   ========================================== */
+
+@media (max-width: 768px) {
+  .guarantees {
+    padding: 3rem 1.5rem;
+  }
+
+  .guarantees h2 {
+    font-size: 2rem;
+  }
+
+  .guarantees-blur {
+    padding: 2rem 1.5rem;
+  }
+
+  .guarantees-content ul {
+    gap: 2rem;
+  }
+
+  .guarantees-content h3 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .guarantees {
+    padding: 2.5rem 1rem;
+  }
+
+  .guarantees h2 {
+    font-size: 1.75rem;
+  }
+
+  .guarantees > p {
+    font-size: 1rem;
+  }
+
+  .guarantees-blur {
+    padding: 1.5rem 1rem;
+  }
+
+  .guarantees-content ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .guarantees-content h3 {
+    font-size: 2rem;
+  }
+
+  .guarantees-content p {
+    font-size: 1rem;
+  }
+}
+
+/* ==========================================
+   СПЕЦИАЛЬНО ДЛЯ РАЗНЫХ МОДЕЛЕЙ iPhone
+   ========================================== */
+
+/* iPhone XR, 11 (414px) */
+@media only screen and (device-width: 414px) and (-webkit-device-pixel-ratio: 2) {
+  .hero-head h1,
+  .hero-head span {
+    font-size: 2.1rem !important;
+  }
+  
+  .pricing-plans-carts h4 {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* iPhone 12 mini (375px) */
+@media only screen and (device-width: 375px) and (-webkit-device-pixel-ratio: 3) {
+  .hero-head h1,
+  .hero-head span {
+    font-size: 1.85rem !important;
+  }
+  
+  .hero-but button {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ==========================================
+   ЛАНДШАФТНАЯ ОРИЕНТАЦИЯ
+   ========================================== */
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 932px)
+  and (orientation: landscape) {
+  
+  .hero {
+    padding: 3rem 1.5rem 2rem;
+    min-height: auto;
+  }
+  
+  .hero-info {
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  .nav {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .pricing-plans-carts {
+    flex-direction: row;
+  }
+
+  .pricing-plans-carts > li {
+    flex: 1;
+  }
+}
+
+/* ==========================================
+   COMMON - МОБИЛЬНЫЕ СТИЛИ
+   ========================================== */
+
+@media (max-width: 640px) {
+  a,
+  p {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .important-text {
+    font-size: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 428px) {
+  p {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+}

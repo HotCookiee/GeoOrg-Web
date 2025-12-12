@@ -4,297 +4,251 @@
 
 /* === ОСНОВНАЯ СЕКЦИЯ === */
 .pricing-plans {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 6rem 3rem;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 3rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 /* === ЗАГОЛОВОК === */
 .pricing-plans-header {
-    text-align: center;
-    margin: 0 0 3rem 0;
-    padding: 0;
+  text-align: center;
+  margin: 0 0 3rem 0;
+  padding: 0;
 }
 
 .pricing-plans-header .important-text {
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin: 0;
-    letter-spacing: -0.5px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
 /* === СПИСОК КАРТОЧЕК === */
 .pricing-plans-carts {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: 2.5rem;
-    list-style: none;
-    max-width: 93.75rem;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    align-items: stretch;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  list-style: none;
+  max-width: 93.75rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: stretch;
 }
 
 /* === ОДНА КАРТОЧКА (LI) === */
 .pricing-plans-carts > li {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    border-radius: 1.5rem;
-    padding: 2.5rem 2rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
 /* === ГРАДИЕНТЫ ДЛЯ КАЖДОЙ КАРТОЧКИ === */
-
-/* Стартап - голубой */
 .pricing-plans-carts > li:nth-child(1) {
-    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
-    border: 2px solid #bae6fd;
-    box-shadow: 0 10px 40px rgba(14, 165, 233, 0.12);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+  border: 2px solid #bae6fd;
+  box-shadow: 0 10px 40px rgba(14, 165, 233, 0.12);
 }
 
 .pricing-plans-carts > li:nth-child(1):hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(14, 165, 233, 0.25);
-    border-color: #7dd3fc;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.25);
+  border-color: #7dd3fc;
 }
 
-/* Бизнес - фиолетовый (ПОПУЛЯРНЫЙ) */
 .pricing-plans-carts > li:nth-child(2) {
-    background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
-    border: 2px solid #c084fc;
-    box-shadow: 0 15px 50px rgba(168, 85, 247, 0.25);
-    transform: scale(1.05);
-    z-index: 2;
+  background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+  border: 2px solid #c084fc;
+  box-shadow: 0 15px 50px rgba(168, 85, 247, 0.25);
+  transform: scale(1.05);
+  z-index: 2;
 }
 
 .pricing-plans-carts > li:nth-child(2):hover {
-    transform: scale(1.05) translateY(-10px);
-    box-shadow: 0 25px 70px rgba(168, 85, 247, 0.35);
-    border-color: #a855f7;
+  transform: scale(1.05) translateY(-10px);
+  box-shadow: 0 25px 70px rgba(168, 85, 247, 0.35);
+  border-color: #a855f7;
 }
 
-/* Корпоративный - зелёный */
 .pricing-plans-carts > li:nth-child(3) {
-    background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
-    border: 2px solid #86efac;
-    box-shadow: 0 10px 40px rgba(34, 197, 94, 0.12);
+  background: linear-gradient(135deg, #dcfce7 0%, #f0fdf4 100%);
+  border: 2px solid #86efac;
+  box-shadow: 0 10px 40px rgba(34, 197, 94, 0.12);
 }
 
 .pricing-plans-carts > li:nth-child(3):hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(34, 197, 94, 0.25);
-    border-color: #4ade80;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(34, 197, 94, 0.25);
+  border-color: #4ade80;
 }
 
 /* === ВНУТРЕННИЙ DIV === */
 .pricing-plans-carts > li > div {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 1.5rem;
 }
 
 /* === ЗАГОЛОВОК H4 === */
 .pricing-plans-carts h4 {
-    font-size: 1.75rem;
-    font-weight: 800;
-    text-align: left;
-    color: #0f172a;
-    margin: 0;
-    letter-spacing: -0.5px;
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-align: left;
+  color: #0f172a;
+  margin: 0;
+  letter-spacing: -0.5px;
 }
 
 /* === ЦЕНА === */
 .pricing-plans-carts .important-text {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #0f172a;
-    margin: 0;
-    line-height: 1;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1;
 }
 
 .pricing-plans-carts .important-text .currency {
-    font-size: 1.25rem;
-    color: #64748b;
-    font-weight: 600;
+  font-size: 1.25rem;
+  color: #64748b;
+  font-weight: 600;
 }
 
 /* === ОПИСАНИЕ === */
 .pricing-plans-carts > li > div > p:not(.important-text) {
-    font-size: 1rem;
-    color: #64748b;
-    line-height: 1.5;
-    margin: 0;
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
 }
 
 /* === СПИСОК ФУНКЦИЙ === */
 .pricing-plans-carts div > ul {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-    flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  flex: 1;
 }
 
 .pricing-plans-carts div > ul > li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    font-size: 1rem;
-    color: #334155;
-    line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.5;
 }
 
 /* === ИКОНКИ (ЭМОДЗИ) === */
 .feature-icon {
-    font-size: 1.5rem;
-    flex-shrink: 0;
-    width: 2rem;
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 .pricing-plans-carts > li:hover .feature-icon {
-    transform: scale(1.15);
-    background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.9);
 }
 
 /* === КНОПКИ === */
 .pricing-plans-carts button {
-    width: 100%;
-    padding: 1.25rem 2rem;
-    border-radius: 1rem;
-    font-weight: 700;
-    font-size: 1.05rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-    margin-top: auto;
+  width: 100%;
+  padding: 1.25rem 2rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  margin-top: auto;
 }
 
 .btn.secondary {
-    background: white;
-    color: #0f172a;
-    border: 2px solid #e2e8f0;
+  background: white;
+  color: #0f172a;
+  border: 2px solid #e2e8f0;
 }
 
 .btn.secondary:hover {
-    background: #f8fafc;
-    border-color: #cbd5e1;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
 }
 
 .pricing-plans-carts .btn.primary {
-    background: linear-gradient(135deg, #a855f7, #9333ea);
-    color: white;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+  color: white;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
 }
 
 .pricing-plans-carts .btn.primary:hover {
-    background: linear-gradient(135deg, #9333ea, #7e22ce);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(168, 85, 247, 0.4);
+  background: linear-gradient(135deg, #9333ea, #7e22ce);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(168, 85, 247, 0.4);
 }
 
 /* === БЕЙДЖ "ПОПУЛЯРНЫЙ" === */
 .pricing-plans-popular-head {
-    position: absolute;
-    left: 50%;
-    top: -15px;
-    transform: translateX(-50%);
-    margin: 0;
-    background: linear-gradient(135deg, #a855f7, #9333ea);
-    color: white;
-    border-radius: 2rem;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-align: center;
-    padding: 0.5rem 1.5rem;
-    white-space: nowrap;
-    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
-    z-index: 3;
+  position: absolute;
+  left: 50%;
+  top: -15px;
+  transform: translateX(-50%);
+  margin: 0;
+  background: linear-gradient(135deg, #a855f7, #9333ea);
+  color: white;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+  z-index: 3;
 }
 
-
-/* ========================================
-   📱 АДАПТИВ
-   ======================================== */
-
-/* Tablet */
-@media (max-width: 1024px) {
-    .pricing-plans {
-        padding: 4rem 2rem;
-    }
-
-    .pricing-plans-carts {
-        flex-direction: column;
-        gap: 2rem;
-    }
-    
-    .pricing-plans-carts > li:nth-child(2) {
-        order: -1;
-        transform: scale(1);
-    }
-    
-    .pricing-plans-carts > li:nth-child(2):hover {
-        transform: translateY(-10px);
-    }
-}
-
-/* Mobile */
 @media (max-width: 640px) {
-    .pricing-plans {
-        padding: 3rem 1rem;
-    }
+  .pricing-plans {
+    padding: 3rem 1.25rem;
+  }
 
-    .pricing-plans-header .important-text {
-        font-size: 2rem;
-    }
+  .pricing-plans-carts {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 
-    .pricing-plans-carts {
-        gap: 1.5rem;
-    }
-    
-    .pricing-plans-carts > li {
-        padding: 2rem 1.5rem;
-    }
+  .pricing-plans-carts > li {
+    padding: 1.75rem 1.25rem;
+  }
 
-    .pricing-plans-carts h4 {
-        font-size: 1.5rem;
-    }
-    
-    .pricing-plans-carts .important-text {
-        font-size: 2rem;
-    }
+  .pricing-plans-carts h4 {
+    font-size: 1.25rem;
+  }
 
-    .pricing-plans-popular-head {
-        font-size: 0.85rem;
-        top: -12px;
-        padding: 0.4rem 1.25rem;
-    }
-    
-    .pricing-plans-carts div > ul > li {
-        font-size: 0.95rem;
-    }
-    
-    .feature-icon {
-        font-size: 1.25rem;
-        width: 1.75rem;
-        height: 1.75rem;
-    }
+  .pricing-plans-carts .important-text {
+    font-size: 1.5rem;
+  }
+
+  .pricing-plans-carts button {
+    width: 100%;
+  }
 }

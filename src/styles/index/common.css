@@ -1,12 +1,13 @@
 :root {
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-
+  
   /* Weights */
   --fw-normal: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
-
+  
+  /* Font Sizes */
   --fs-xs: 12px;
   --fs-sm: 14px;
   --fs-base: 16px;
@@ -15,7 +16,8 @@
   --fs-2xl: 24px;
   --fs-3xl: 32px;
   --fs-4xl: 48px;
-
+  
+  /* Line Heights */
   --lh-tight: 1.2;
   --lh-normal: 1.5;
   --lh-relaxed: 1.75;
@@ -27,37 +29,70 @@
   box-sizing: border-box;
 }
 
-
-
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 p {
-  font-size: 1.125rem;          
+  font-size: 1.125rem;
   color: gray;
   margin: 0;
   text-align: justify;
   font-family: var(--font-family);
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   font-family: var(--font-family);
 }
 
 .important-text {
-  font-size: 2.25rem;           
+  font-size: 2.25rem;
   color: black;
   margin: 0.5rem 0;
 }
 
-@media (max-width: 640px) {
-  a,
-  p {
-    font-size: 1rem;             
-    padding: 0.75rem 1rem;
-  }
-
-  .important-text {
-    font-size: 1.75rem;
+/* Оптимизация для Retina дисплеев */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@media (max-width: 640px) {
+  h1,
+  .hero-head h1 {
+    font-size: 1.85rem;
+    line-height: 1.2;
+  }
+
+  h2,
+  .important-text {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  p,
+  a,
+  li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+/* Универсальная карточка */
+.card {
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.45);
+}
+
+@media (max-width: 640px) {
+  .card {
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
+  }
+}
+

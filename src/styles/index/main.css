@@ -8,11 +8,16 @@
 @import url('./buttons.css');
 @import url('./features.css');
 @import url('./iphone-adaptive.css'); 
+@import url('./сontact-us.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 html {
   scroll-behavior: smooth;
 }
+*{
+  font-family: 'Roboto' !important;
+}
+
 
 @media (max-width: 768px) {
   html {
@@ -23,3 +28,4 @@ html {
     scroll-snap-align: start;
   }
 }
+

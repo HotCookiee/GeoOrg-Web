@@ -7,14 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="src/styles/index/main.css">
-    <title>InsurePro — бесплатное удаление страховки</title>
-    <link
-        rel="icon"
-        type="image/png"
-        sizes="10000px"
-        href="/src/assets/75980408-5520-4781-be20-0e3dffbedccd-Photoroom.png"
-    >
+    <title>InsurePro</title>
+    <link rel="icon" type="image/png" sizes="10000px"
+        href="/src/assets/75980408-5520-4781-be20-0e3dffbedccd-Photoroom.png">
     <script src="src/scripts/wow.min.js"></script>
+    <script src="src/scripts/index.js" defer></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             new WOW({
@@ -28,6 +25,8 @@
 </head>
 
 <body>
+
+
     <header>
         <nav class="nav">
             <a class="nav-logo" href="#">
@@ -47,7 +46,7 @@
                 <a href="#about">О нас</a>
             </div>
             <div class="nav-but">
-                <button class="but-light-hed">Войти</button>
+                <button onclick="document.location='./src/pages/log.html'" class="but-light-hed">Войти</button>
                 <button class="but-bleak-hed">Связаться с нами</button>
             </div>
             <div class="nav-mobile">
@@ -82,7 +81,6 @@
                             <p>Компаний</p>
                         </div>
                     </div>
-
                     <div data-wow-delay='0.2s' class="wow animate__animated animate__fadeInUp">
                         <div class="hero-info-text second">
                             <p class="important-text">98%</p>
@@ -470,7 +468,6 @@
             </div>
         </section>
     </main>
-
     <footer class="information" id="about">
         <div class="information-blok-1">
             <div>
@@ -541,6 +538,35 @@
             </div>
         </div>
     </footer>
+    <div class="Contact-us">
+        <div class="form-container">
+            <div class="form-content">
+                <button class="close-btn" onclick="closeForm()">&times;</button>
+                <h2>✨ Связаться с нами</h2>
+                <p class="form-subtitle">Заполните форму и мы свяжемся с вами в течение 24 часов</p>
+
+                <form action="/submit" method="post">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email адрес</label>
+                        <input type="email" id="email" name="email" placeholder="ivan@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Ваше сообщение</label>
+                        <textarea id="message" name="message" placeholder="Расскажите, чем мы можем помочь..."
+                            rows="5"></textarea>
+                    </div>
+
+                    <button type="submit">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

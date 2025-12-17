@@ -1,0 +1,225 @@
+/* Модальное окно */
+.Contact-us {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.4s ease, background-color 0.4s ease, backdrop-filter 0.4s ease;
+    padding: 20px;
+}
+
+.Contact-us.active {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+/* Контейнер формы с градиентом */
+.form-container {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 3px;
+    border-radius: 20px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8) translateY(-30px) rotateX(10deg);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                opacity 0.4s ease;
+}
+
+.Contact-us.active .form-container {
+    transform: scale(1) translateY(0) rotateX(0deg);
+    opacity: 1;
+}
+
+/* Внутренний контент */
+.form-content {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    position: relative;
+}
+
+/* Заголовок */
+.form-content h2 {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.close-btn:hover {
+    transform: rotate(90deg) scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+/* Группы полей */
+.form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* Лейблы */
+.Contact-us label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+/* Поля ввода */
+.Contact-us input[type="text"],
+.Contact-us input[type="email"],
+.Contact-us textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+.Contact-us input:focus,
+.Contact-us textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.Contact-us textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Кнопка отправки */
+.Contact-us button[type="submit"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.Contact-us button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.Contact-us button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Эффект ripple при клике */
+.Contact-us button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.Contact-us button[type="submit"]:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Иконки для полей (опционально) */
+.form-group::before {
+    position: absolute;
+    left: 18px;
+    top: 43px;
+    font-size: 18px;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.form-group:focus-within::before {
+    color: #667eea;
+}
+
+/* Анимация placeholder */
+.Contact-us input::placeholder,
+.Contact-us textarea::placeholder {
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.Contact-us input:focus::placeholder,
+.Contact-us textarea:focus::placeholder {
+    color: #ccc;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 576px) {
+    .form-content {
+        padding: 30px 25px;
+    }
+    
+    .form-content h2 {
+        font-size: 24px;
+    }
+    
+    .Contact-us {
+        padding: 15px;
+    }
+}
